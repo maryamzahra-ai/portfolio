@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maryam Zahra — Web Designer & Developer</title>
+    <style>
+        /* General Reset & Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #030712; 
+            line-height: 1.6;
+            padding: 20px;
+        }
+        header, section {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            color: #94a3b8;
+        }
+
+        /* Navigation Layout */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #cbd5e1; 
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #94a3b8;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Single Column Full-Width Layout */
+        .about-text {
+            width: 100%;
+        }
+
+        /* Pricing & Services Grid Layout */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .price-card {
+            background: rgba(3, 7, 18, 0.4);
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #38bdf8;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2);
+        }
+        .price-card h3 {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .price-tag {
+            font-size: 1.4rem;
+            color: #38bdf8;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .price-card p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+        .card-btn {
+            display: inline-block;
+            text-align: center;
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .card-btn:hover {
+            background: #38bdf8;
+            color: #030712;
+        }
+
+        /* Grid Layout for Example Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .project-item {
+            background: rgba(3, 7, 18, 0.4);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .project-item h3 {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .tag {
+            font-size: 0.75rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .project-item p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        /* Interactive Contact Form Styling */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+            max-width: 500px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .form-group label {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        .form-group input, .form-group textarea {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #475569;
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #38bdf8;
+        }
+        .submit-btn {
+            background-color: #38bdf8;
+            color: #030712;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            align-self: flex-start;
+        }
+        .submit-btn:hover {
+            background-color: #0ea5e9;
+        }
+
+        /* AMENDED: Secure Email Text Layout Container */
+        .email-direct {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+        }
+        .email-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .email-link:hover {
+            color: #0ea5e9;
+            text-decoration: underline;
+        }
+
+        /* Section Layouts */
+        h1, h2 {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #94a3b8; 
+        }
+        p strong {
+            color: #cbd5e1;
+        }
+
+        /* Footer Layout */
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #475569; 
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Header & Navigation Layout -->
+    <header>
+        <nav>
+            <div class="logo">Maryam Zahra</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="about-text">
+            <h1>About Me</h1>
+            <p>Hi! My name is <strong>Maryam Zahra</strong> and I am a self-taught web designer and a web developer. I am passionate about making the cleanest, neatest, and well-defined websites possible.</p>
+            <p>My aim is to convert complex problems into simple, well-defined, and beautifully designed modernized solutions in the form of websites. I focus on delivering clean code and reliable communication for every project.</p>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Rate Layout Section -->
+    <section id="services">
+        <h2>Services & Rates</h2>
+        <p>Transparent fixed pricing for your digital needs. Choose a package that fits your goal:</p>
+        
+        <div class="services-grid">
+            <div class="price-card">
+                <div>
+                    <h3>Personal Portfolio</h3>
+                    <div class="price-tag">40,000+ PKR</div>
+                    <p>A sleek 1-to-3 page custom portfolio website to showcase your work, resume, and contact details cleanly.</p>
+                </div>
+                <a href="#contact" class="card-btn">Hire Me</a>
+            </div>
+
+            <div class="price-card">
+                <div>
+                    <h3>Website Redesign</h3>
+                    <div class="price-tag">80,000+ PKR</div>
+                    <p>Rebuilding your slow or outdated business website into a modern, lightning-fast layout optimized for mobile screens.</p>
+                </div>
+                <a href="#contact" class="card-btn">Hire Me</a>
+            </div>
+
+            <div class="price-card">
+                <div>
+                    <h3>Business Site</h3>
+                    <div class="price-tag">110,000+ PKR</div>
+                    <p>A full multi-page (4-5 pages) responsive website for local brands, cafes, schools, or agencies looking to scale online.</p>
+                </div>
+                <a href="#contact" class="card-btn">Hire Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Projects Section containing 2 embedded separate websites -->
+    <section id="projects">
+        <h2>Example Projects</h2>
+        <p>Explore production concept frameworks demonstrating user experience layout design:</p>
+        
+        <div class="projects-grid">
+            <!-- Project 1: Personal Portfolio -->
+            <div class="project-item">
+                <div>
+                    <h3>Aura Photography Portfolio</h3>
+                    <div class="project-tags">
+                        <span class="tag">UI/UX Design</span>
+                        <span class="tag">Minimalist</span>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
+                    <p>A modern, image-focused personal portfolio layout designed for freelance photographers. Features clean typography, an asymmetric grid structure, and an ultra-fast loading speed framework.</p>
+                </div>
+                <a href="data:text/html;charset=utf-8,%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EAura%20Photography%3C/title%3E%3Cstyle%3E*%7Bmargin:0;padding:0;box-sizing:border-box;font-family:'Segoe%20UI',sans-serif;%7Dbody%7Bbackground:%230b0f19;color:%23fff;padding:40px%2020px;text-align:center;%7D.wrap%7Bmax-width:900px;margin:0%20auto;%7Dh1%7Bcolor:%2338bdf8;margin-bottom:10px;font-size:2.5rem;%7D.filters%7Bmargin:30px%200;display:flex;justify-content:center;gap:15px;%7Dbutton%7Bbackground:transparent;border:2px%20solid%20%2338bdf8;color:%2338bdf8;padding:8px%2020px;border-radius:20px;font-weight:bold;cursor:pointer;transition:all%200.3s;%7Dbutton.active,button:hover%7Bbackground:%2338bdf8;color:%230b0f19;%7D.grid%7Bdisplay:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;%7D.card%7Bbackground:%231e293b;border-radius:12px;overflow:hidden;border:1px%20solid%20%23334155;box-shadow:0%2010px%2020px%20rgba(0,0,0,0.3);transition:all%200.3s;%7D.card:hover%7Btransform:translateY(-8px);border-color:%2338bdf8;%7D.img-box%7Bheight:180px;background:linear-gradient(45deg,%230f172a,%231e293b);display:flex;align-items:center;justify-center;color:%23475569;font-weight:bold;font-size:1.1rem;%7D.desc%7Bpadding:15px;font-size:0.9rem;color:%2394a3b8;%7D%3C/style%3E%3C/head%3E%3Cbody%3E%3Cdiv%20class='wrap'%3E%3Ch1%3EAura%20Photography%3C/h1%3E%3Cp%3EInteractive%20Concept%20Portfolio%20•%20Developed%20by%20Maryam%20Zahra%3C/p%3E%3Cdiv%20class='filters'%3E%3Cbutton%20class='active'%20onclick='filter(\x22all\x22,this)'%3EAll%20Work%3C/button%3E%3Cbutton%20onclick='filter(\x22port\x22,this)'%3EPortraits%3C/button%3E%3Cbutton%20onclick='filter(\x22land\x22,this)'%3ELandscapes%3C/button%3E%3C/div%3E%3Cdiv%20class='grid'%3E%3Cdiv%20class='card%20port'%3E%3Cdiv%20class='img-box'%3E%5B%20Studio%20Portrait%20%5D%3C/div%3E%3Cdiv%20class='desc'%3EStudio%20Lighting%20Session%20(Portrait)%3C/div%3E%3C/div%3E%3Cdiv%20class='card%20land'%3E%3Cdiv%20class='img-box'%3E%5B%20Mountain%20Range%20%5D%3C/div%3E%3Cdiv%20class='desc'%3EAlpine%20Sunset%20Expedition%20(Landscape)%3C/div%3E%3C/div%3E%3Cdiv%20class='card%20port'%3E%3Cdiv%20class='img-box'%3E%5B%20Street%20Fashion%20%5D%3C/div%3E%3Cdiv%20class='desc'%3EUrban%20Fashion%20Editorial%20(Portrait)%3C/div%3E%3C/div%3E%3Cdiv%20class='card%20land'%3E%3Cdiv%20class='img-box'%3E%5B%20Ocean%20Waves%20%5D%3C/div%3E%3Cdiv%20class='desc'%3ECoastal%20Long%20Exposure%20(Landscape)%3C/div%3E%3C/div%3E%3C/div%3E%3C/div%3E%3Cscript%3Efunction%20filter(cat,btn)%7Bdocument.querySelectorAll(\x22button\x22).forEach(b=\x3Eb.classList.remove(\x22active\x22));btn.classList.add(\x22active\x22);document.querySelectorAll(\x22.card\x22).forEach(c=%3E%7Bif(cat===\x22all\x22%7C%7Cc.classList.contains(cat))%7Bc.style.display=\x22block\x22;%7Delse%7Bc.style.display=\x22none\x22;%7D%7D);%7D%3C/script%3E%3C/body%3E%3C/html%3E" target="_blank" class="card-btn">View Live Concept</a>
+            </div>
+
+            <!-- Project 2: Business Site -->
+            <div class="project-item">
+                <div>
+                    <h3>Apex Law Associates</h3>
+                    <div class="project-tags">
+                        <span class="tag">Booking Module</span>
+                        <span class="tag">Premium Theme</span>
+                        <span class="tag">Dynamic UI</span>
+                    </div>
+                    <p>A sophisticated corporate business website featuring a custom booking calculation input form. Clients can type values, select dates, and trigger dynamic processing modules right on the page.</p>
+                </div>
+                <a href="data:text/html;charset=utf-8,%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EApex%20Law%3C/title%3E%3Cstyle%3E*%7Bmargin:0;padding:0;box-sizing:border-box;font-family:'Segoe%20UI',sans-serif;%7Dbody%7Bbackground:%23f8fafc;color:%231e293b;padding:40px%2020px;%7D.container%7Bmax-width:650px;margin:0%20auto;background:%23fff;padding:35px;border-radius:12px;box-shadow:0%2010px%2025px%20rgba(0,0,0,0.05);border-top:6px%20solid%20%231e3a8a;%7Dh1%7Bcolor:%231e3a8a;margin-bottom:10px;text-align:center;%7Dp.sub%7Btext-align:center;color:%2364748b;margin-bottom:30px;%7D.form-box%7Bbackground:%23f1f5f9;padding:20px;border-radius:8px;margin-top:20px;text-align:left;%7Dlabel%7Bdisplay:block;font-size:0.9rem;font-weight:600;margin-bottom:5px;color:%231e3a8a;%7Dselect,input%7Bwidth:100%;padding:10px;margin-bottom:15px;border:1px%20solid%20%23cbd5e1;border-radius:6px;outline:none;font-size:0.95rem;%7Dbutton%7Bwidth:100%;background:%231e3a8a;color:%23fff;padding:12px;border:none;border-radius:6px;font-weight:bold;font-size:1rem;cursor:pointer;transition:background%200.3s;%7Dbutton:hover%7Bbackground:%231d4ed8;%7D.result%7Bmargin-top:20px;padding:15px;background:%23dcfce7;color:%2314532d;border-radius:6px;font-weight:bold;text-align:center;display:none;%7D%3C/style%3E%3C/head%3E%3Cbody%3E%3Cdiv%20class='container'%3E%3Ch1%3EApex%20Law%20Associates%3C/h1%3E%3Cp%20class='sub'%3EPremium%20Corporate%20Counsel%20•%20Developed%20by%20Maryam%20Zahra%3C/p%3E%3Cdiv%20class='form-box'%3E%3Ch3%20style='margin-bottom:15px;color:%231e3a8a;'%3ESchedule%20Consultation%3C/h3%3E%3Clabel%3ESelect%20Legal%20Case%20Type%3C/label%3E%3Cselect%20id='case'%3E%3Coption%3ECorporate%20&%20Business%20Law%3C/option%3E%3Coption%3EProperty%20&%20Real%20Estate%3C/option%3E%3Coption%3ETrademark%20&%20Copyright%3C/option%3E%3C/select%3E%3Clabel%3EYour%20Full%20Name%3C/label%3E%3Cinput%20type='text'%20id='name'%20placeholder='Maryam%20Zahra'%3E%3Cbutton%20onclick='book()'%3EConfirm%20Appointment%3C/button%3E%3Cdiv%20id='res'%20class='result'%3E%3C/div%3E%3C/div%3E%3C/div%3E%3Cscript%3Efunction%20book()%7Bvar%20n=document.getElementById('name').value;var%20c=document.getElementById('case').value;if(!n)%7Balert('Please%20enter%20your%20name.');return;%7Dvar%20r=document.getElementById('res');r.innerText='Success!%20Appointment%20confirmed%20for%20'+n+'%20('+c+').%20Our%20team%20will%20email%20you%20shortly.';r.style.display='block';%7D%3C/script%3E%3C/body%3E%3C/html%3E" target="_blank" class="card-btn">View Live Concept</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Have a question or want to work together? Drop me a message below!</p>
+        
+        <!-- REPLACE 'YOUR_FORMSPREE_ID_HERE' WITH YOUR KEY LATER TO GET INBOX EMAILS -->
+        <form action="https://formspree.io" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+            
+            <!-- AMENDED: Secure Mailto Email Address Link -->
+            <div class="email-direct">
+                <span>Or email directly at: </span>
+                <a href="mailto:sarwatmasror@gmail.com" class="email-link">sarwatmasror@gmail.com</a>
+            </div>
+        </form>
+    </section>
+
+    <!-- Base Footer Section Layout -->
+    <footer>
+        <p>© 2026 Maryam Zahra — Web Designer & Developer</p>
+    </footer>
+
+</body>
+</html>
