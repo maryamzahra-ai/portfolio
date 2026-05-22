@@ -4,375 +4,415 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maryam Zahra — Web Designer & Developer</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* General Reset & Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: #030712; 
-            line-height: 1.6;
-            padding: 20px;
-        }
-        header, section {
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            color: #94a3b8;
-        }
-
-        /* Navigation Layout */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #cbd5e1; 
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #94a3b8;
-            margin-left: 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #38bdf8;
-        }
-
-        /* Single Column Full-Width Layout */
-        .about-text {
-            width: 100%;
-        }
-
-        /* Pricing & Services Grid Layout */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .price-card {
-            background: rgba(3, 7, 18, 0.4);
-            padding: 25px;
-            border-radius: 10px;
-            border-top: 4px solid #38bdf8;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .price-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2);
-        }
-        .price-card h3 {
-            color: #cbd5e1;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        .price-tag {
-            font-size: 1.4rem;
-            color: #38bdf8;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .price-card p {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
-        .card-btn {
-            display: inline-block;
-            text-align: center;
-            background: transparent;
-            color: #38bdf8;
-            border: 1px solid #38bdf8;
-            padding: 8px 15px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        .card-btn:hover {
-            background: #38bdf8;
-            color: #030712;
-        }
-
-        /* Grid Layout for Example Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .project-item {
-            background: rgba(3, 7, 18, 0.4);
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .project-item h3 {
-            color: #cbd5e1;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-        .tag {
-            font-size: 0.75rem;
-            background: rgba(56, 189, 248, 0.1);
-            color: #38bdf8;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        .project-item p {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
-
-        /* Interactive Contact Form Styling */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 15px;
-            max-width: 500px;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        .form-group label {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            font-weight: 500;
-        }
-        .form-group input, .form-group textarea {
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #475569;
-            background-color: #0f172a;
-            color: #f8fafc;
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: #38bdf8;
-        }
-        .submit-btn {
-            background-color: #38bdf8;
-            color: #030712;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            align-self: flex-start;
-        }
-        .submit-btn:hover {
-            background-color: #0ea5e9;
-        }
-
-        /* AMENDED: Secure Email Text Layout Container */
-        .email-direct {
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.95rem;
-        }
-        .email-link {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        .email-link:hover {
-            color: #0ea5e9;
-            text-decoration: underline;
-        }
-
-        /* Section Layouts */
-        h1, h2 {
-            margin-bottom: 15px;
-            color: #cbd5e1;
-        }
-        p {
-            margin-bottom: 15px;
-            color: #94a3b8; 
-        }
-        p strong {
-            color: #cbd5e1;
-        }
-
-        /* Footer Layout */
-        footer {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #475569; 
-            margin-top: 20px;
-            padding-top: 20px;
-        }
+        html { scroll-behavior: smooth; }
+        /* Smooth scrolling inside the modal */
+        .modal-body { scroll-behavior: smooth; }
+        /* Concept image backgrounds */
+        .bg-bakery { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=1000'); }
+        .bg-photo { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1495707902641-75cac588d2e9?auto=format&fit=crop&q=80&w=1000'); }
+        .bg-arch-hero { background-image: linear-gradient(rgba(15,23,42,0.65), rgba(15,23,42,0.85)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1400'); }
     </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-400 font-sans relative">
 
-    <!-- Main Header & Navigation Layout -->
-    <header>
-        <nav>
-            <div class="logo">Maryam Zahra</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-slate-950/80 backdrop-blur-md border-b border-slate-900 sticky top-0 z-40">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-white">Maryam Zahra</a>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#about" class="text-slate-400 hover:text-white transition">About</a>
+                <a href="#services" class="text-slate-400 hover:text-white transition">Services</a>
+                <a href="#projects" class="text-slate-400 hover:text-white transition">Projects</a>
+                <a href="#contact" class="text-slate-400 hover:text-white transition">Contact</a>
+            </nav>
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-semibold transition">Get in Touch</a>
+        </div>
     </header>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <div class="about-text">
-            <h1>About Me</h1>
-            <p>Hi! My name is <strong>Maryam Zahra</strong> and I am a self-taught web designer and a web developer. I am passionate about making the cleanest, neatest, and well-defined websites possible.</p>
-            <p>My aim is to convert complex problems into simple, well-defined, and beautifully designed modernized solutions in the form of websites. I focus on delivering clean code and reliable communication for every project.</p>
-        </div>
-    </section>
-
-    <!-- Services & Pricing Rate Layout Section -->
-    <section id="services">
-        <h2>Services & Rates</h2>
-        <p>Transparent fixed pricing for your digital needs. Choose a package that fits your goal:</p>
-        
-        <div class="services-grid">
-            <div class="price-card">
-                <div>
-                    <h3>Personal Portfolio</h3>
-                    <div class="price-tag">40,000+ PKR</div>
-                    <p>A sleek 1-to-3 page custom portfolio website to showcase your work, resume, and contact details cleanly.</p>
-                </div>
-                <a href="#contact" class="card-btn">Hire Me</a>
-            </div>
-
-            <div class="price-card">
-                <div>
-                    <h3>Website Redesign</h3>
-                    <div class="price-tag">80,000+ PKR</div>
-                    <p>Rebuilding your slow or outdated business website into a modern, lightning-fast layout optimized for mobile screens.</p>
-                </div>
-                <a href="#contact" class="card-btn">Hire Me</a>
-            </div>
-
-            <div class="price-card">
-                <div>
-                    <h3>Business Site</h3>
-                    <div class="price-tag">110,000+ PKR</div>
-                    <p>A full multi-page (4-5 pages) responsive website for local brands, cafes, schools, or agencies looking to scale online.</p>
-                </div>
-                <a href="#contact" class="card-btn">Hire Me</a>
+    <!-- HERO SECTION -->
+    <section class="py-20 md:py-28 bg-gradient-to-b from-slate-950 to-slate-900 border-b border-slate-900">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <span class="bg-blue-950 text-blue-400 border border-blue-900 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Available for Freelance Work</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mt-4 mb-6">
+                Building Modern Websites That Deliver Results
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 leading-relaxed mb-8">
+                Hi, I'm Maryam Zahra. I create clean, lightning-fast, and conversion-optimized websites tailored to help businesses and creators grow their online presence.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#projects" class="bg-white hover:bg-slate-100 text-slate-950 px-6 py-3 rounded-md font-medium text-center transition">Explore Projects</a>
+                <a href="#services" class="bg-slate-900 hover:bg-slate-800 text-slate-400 border border-slate-800 px-6 py-3 rounded-md font-medium text-center transition">View Pricing & Services</a>
             </div>
         </div>
     </section>
 
-    <!-- Example Projects Section containing 2 embedded separate websites -->
-    <section id="projects">
-        <h2>Example Projects</h2>
-        <p>Explore production concept frameworks demonstrating user experience layout design:</p>
-        
-        <div class="projects-grid">
-            <!-- Project 1: Personal Portfolio -->
-            <div class="project-item">
-                <div>
-                    <h3>Aura Photography Portfolio</h3>
-                    <div class="project-tags">
-                        <span class="tag">UI/UX Design</span>
-                        <span class="tag">Minimalist</span>
-                        <span class="tag">HTML/CSS</span>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 max-w-4xl mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8 items-start">
+            <div class="md:col-span-1">
+                <h2 class="text-2xl font-bold text-white tracking-tight border-l-4 border-blue-600 pl-3">About Me</h2>
+            </div>
+            <div class="md:col-span-2 space-y-4 text-slate-400 leading-relaxed">
+                <p>
+                    I am a self-taught web designer and developer deeply passionate about crafting the neatest, most organized, and pixel-perfect layouts possible. 
+                </p>
+                <p>
+                    My primary goal is to strip away unnecessary complexity and transform business problems into intuitive, modernization-focused design systems. I pride myself on clean architecture, reliable communication, and strict project deadlines.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES & PRICING -->
+    <section id="services" class="py-20 bg-slate-950 border-t border-b border-slate-900">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Services & Transparent Rates</h2>
+                <p class="text-slate-400">Fixed-rate options engineered around specific business milestones. No hidden fees or sudden surprises.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pack 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Personal Portfolio</h3>
+                        <div class="text-2xl font-extrabold text-blue-400 mb-4">40,000+ PKR</div>
+                        <p class="text-sm text-slate-400 leading-relaxed">A sleek, 1-to-3 page tailor-made online home designed to display your resume, design gallery, or case studies cleanly.</p>
                     </div>
-                    <p>A modern, image-focused personal portfolio layout designed for freelance photographers. Features clean typography, an asymmetric grid structure, and an ultra-fast loading speed framework.</p>
+                    <a href="#contact" class="block w-full bg-slate-800 hover:bg-slate-700 text-white text-center text-sm font-semibold py-2.5 rounded-md mt-6 transition">Hire Me</a>
                 </div>
-                <a href="data:text/html;charset=utf-8,%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EAura%20Photography%3C/title%3E%3Cstyle%3E*%7Bmargin:0;padding:0;box-sizing:border-box;font-family:'Segoe%20UI',sans-serif;%7Dbody%7Bbackground:%230b0f19;color:%23fff;padding:40px%2020px;text-align:center;%7D.wrap%7Bmax-width:900px;margin:0%20auto;%7Dh1%7Bcolor:%2338bdf8;margin-bottom:10px;font-size:2.5rem;%7D.filters%7Bmargin:30px%200;display:flex;justify-content:center;gap:15px;%7Dbutton%7Bbackground:transparent;border:2px%20solid%20%2338bdf8;color:%2338bdf8;padding:8px%2020px;border-radius:20px;font-weight:bold;cursor:pointer;transition:all%200.3s;%7Dbutton.active,button:hover%7Bbackground:%2338bdf8;color:%230b0f19;%7D.grid%7Bdisplay:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;%7D.card%7Bbackground:%231e293b;border-radius:12px;overflow:hidden;border:1px%20solid%20%23334155;box-shadow:0%2010px%2020px%20rgba(0,0,0,0.3);transition:all%200.3s;%7D.card:hover%7Btransform:translateY(-8px);border-color:%2338bdf8;%7D.img-box%7Bheight:180px;background:linear-gradient(45deg,%230f172a,%231e293b);display:flex;align-items:center;justify-center;color:%23475569;font-weight:bold;font-size:1.1rem;%7D.desc%7Bpadding:15px;font-size:0.9rem;color:%2394a3b8;%7D%3C/style%3E%3C/head%3E%3Cbody%3E%3Cdiv%20class='wrap'%3E%3Ch1%3EAura%20Photography%3C/h1%3E%3Cp%3EInteractive%20Concept%20Portfolio%20•%20Developed%20by%20Maryam%20Zahra%3C/p%3E%3Cdiv%20class='filters'%3E%3Cbutton%20class='active'%20onclick='filter(\x22all\x22,this)'%3EAll%20Work%3C/button%3E%3Cbutton%20onclick='filter(\x22port\x22,this)'%3EPortraits%3C/button%3E%3Cbutton%20onclick='filter(\x22land\x22,this)'%3ELandscapes%3C/button%3E%3C/div%3E%3Cdiv%20class='grid'%3E%3Cdiv%20class='card%20port'%3E%3Cdiv%20class='img-box'%3E%5B%20Studio%20Portrait%20%5D%3C/div%3E%3Cdiv%20class='desc'%3EStudio%20Lighting%20Session%20(Portrait)%3C/div%3E%3C/div%3E%3Cdiv%20class='card%20land'%3E%3Cdiv%20class='img-box'%3E%5B%20Mountain%20Range%20%5D%3C/div%3E%3Cdiv%20class='desc'%3EAlpine%20Sunset%20Expedition%20(Landscape)%3C/div%3E%3C/div%3E%3Cdiv%20class='card%20port'%3E%3Cdiv%20class='img-box'%3E%5B%20Street%20Fashion%20%5D%3C/div%3E%3Cdiv%20class='desc'%3EUrban%20Fashion%20Editorial%20(Portrait)%3C/div%3E%3C/div%3E%3Cdiv%20class='card%20land'%3E%3Cdiv%20class='img-box'%3E%5B%20Ocean%20Waves%20%5D%3C/div%3E%3Cdiv%20class='desc'%3ECoastal%20Long%20Exposure%20(Landscape)%3C/div%3E%3C/div%3E%3C/div%3E%3C/div%3E%3Cscript%3Efunction%20filter(cat,btn)%7Bdocument.querySelectorAll(\x22button\x22).forEach(b=\x3Eb.classList.remove(\x22active\x22));btn.classList.add(\x22active\x22);document.querySelectorAll(\x22.card\x22).forEach(c=%3E%7Bif(cat===\x22all\x22%7C%7Cc.classList.contains(cat))%7Bc.style.display=\x22block\x22;%7Delse%7Bc.style.display=\x22none\x22;%7D%7D);%7D%3C/script%3E%3C/body%3E%3C/html%3E" target="_blank" class="card-btn">View Live Concept</a>
-            </div>
 
-            <!-- Project 2: Business Site -->
-            <div class="project-item">
-                <div>
-                    <h3>Apex Law Associates</h3>
-                    <div class="project-tags">
-                        <span class="tag">Booking Module</span>
-                        <span class="tag">Premium Theme</span>
-                        <span class="tag">Dynamic UI</span>
+                <!-- Pack 2 -->
+                <div class="bg-slate-900 border border-blue-600 rounded-xl p-6 flex flex-col justify-between shadow-xl relative transform md:-translate-y-2">
+                    <span class="absolute top-0 right-6 bg-blue-600 text-white text-2xs uppercase font-bold px-3 py-1 rounded-b-md tracking-wider">Popular</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Website Redesign</h3>
+                        <div class="text-2xl font-extrabold text-blue-400 mb-4">80,000+ PKR</div>
+                        <p class="text-sm text-slate-400 leading-relaxed">Full technical rebuilding of slow, unresponsive, or visually outdated systems into pristine, high-speed mobile-first frameworks.</p>
                     </div>
-                    <p>A sophisticated corporate business website featuring a custom booking calculation input form. Clients can type values, select dates, and trigger dynamic processing modules right on the page.</p>
+                    <a href="#contact" class="block w-full bg-blue-600 hover:bg-blue-500 text-white text-center text-sm font-semibold py-2.5 rounded-md mt-6 transition shadow-md shadow-blue-900/30">Hire Me</a>
                 </div>
-                <a href="data:text/html;charset=utf-8,%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EApex%20Law%3C/title%3E%3Cstyle%3E*%7Bmargin:0;padding:0;box-sizing:border-box;font-family:'Segoe%20UI',sans-serif;%7Dbody%7Bbackground:%23f8fafc;color:%231e293b;padding:40px%2020px;%7D.container%7Bmax-width:650px;margin:0%20auto;background:%23fff;padding:35px;border-radius:12px;box-shadow:0%2010px%2025px%20rgba(0,0,0,0.05);border-top:6px%20solid%20%231e3a8a;%7Dh1%7Bcolor:%231e3a8a;margin-bottom:10px;text-align:center;%7Dp.sub%7Btext-align:center;color:%2364748b;margin-bottom:30px;%7D.form-box%7Bbackground:%23f1f5f9;padding:20px;border-radius:8px;margin-top:20px;text-align:left;%7Dlabel%7Bdisplay:block;font-size:0.9rem;font-weight:600;margin-bottom:5px;color:%231e3a8a;%7Dselect,input%7Bwidth:100%;padding:10px;margin-bottom:15px;border:1px%20solid%20%23cbd5e1;border-radius:6px;outline:none;font-size:0.95rem;%7Dbutton%7Bwidth:100%;background:%231e3a8a;color:%23fff;padding:12px;border:none;border-radius:6px;font-weight:bold;font-size:1rem;cursor:pointer;transition:background%200.3s;%7Dbutton:hover%7Bbackground:%231d4ed8;%7D.result%7Bmargin-top:20px;padding:15px;background:%23dcfce7;color:%2314532d;border-radius:6px;font-weight:bold;text-align:center;display:none;%7D%3C/style%3E%3C/head%3E%3Cbody%3E%3Cdiv%20class='container'%3E%3Ch1%3EApex%20Law%20Associates%3C/h1%3E%3Cp%20class='sub'%3EPremium%20Corporate%20Counsel%20•%20Developed%20by%20Maryam%20Zahra%3C/p%3E%3Cdiv%20class='form-box'%3E%3Ch3%20style='margin-bottom:15px;color:%231e3a8a;'%3ESchedule%20Consultation%3C/h3%3E%3Clabel%3ESelect%20Legal%20Case%20Type%3C/label%3E%3Cselect%20id='case'%3E%3Coption%3ECorporate%20&%20Business%20Law%3C/option%3E%3Coption%3EProperty%20&%20Real%20Estate%3C/option%3E%3Coption%3ETrademark%20&%20Copyright%3C/option%3E%3C/select%3E%3Clabel%3EYour%20Full%20Name%3C/label%3E%3Cinput%20type='text'%20id='name'%20placeholder='Maryam%20Zahra'%3E%3Cbutton%20onclick='book()'%3EConfirm%20Appointment%3C/button%3E%3Cdiv%20id='res'%20class='result'%3E%3C/div%3E%3C/div%3E%3C/div%3E%3Cscript%3Efunction%20book()%7Bvar%20n=document.getElementById('name').value;var%20c=document.getElementById('case').value;if(!n)%7Balert('Please%20enter%20your%20name.');return;%7Dvar%20r=document.getElementById('res');r.innerText='Success!%20Appointment%20confirmed%20for%20'+n+'%20('+c+').%20Our%20team%20will%20email%20you%20shortly.';r.style.display='block';%7D%3C/script%3E%3C/body%3E%3C/html%3E" target="_blank" class="card-btn">View Live Concept</a>
+
+                <!-- Pack 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Business Site</h3>
+                        <div class="text-2xl font-extrabold text-blue-400 mb-4">110,000+ PKR</div>
+                        <p class="text-sm text-slate-400 leading-relaxed">A 4-5 page premium multi-tier layout engineered for local commercial services, boutique shops, or agencies trying to scale lead generation.</p>
+                    </div>
+                    <a href="#contact" class="block w-full bg-slate-800 hover:bg-slate-700 text-white text-center text-sm font-semibold py-2.5 rounded-md mt-6 transition">Hire Me</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Have a question or want to work together? Drop me a message below!</p>
-        
-        <!-- REPLACE 'YOUR_FORMSPREE_ID_HERE' WITH YOUR KEY LATER TO GET INBOX EMAILS -->
-        <form action="https://formspree.io" method="POST" class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Your Name">
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20 max-w-5xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Example Interactive Concepts</h2>
+            <p class="text-slate-400">Explore built production concept frameworks showcasing unique user experiences and UI layouts.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Project 1: Sourdough & Shutter Portfolio -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-amber-950/60 text-amber-400 border border-amber-900/50 text-xs font-semibold px-2.5 py-0.5 rounded">Dual-Niche UI</span>
+                        <span class="bg-slate-800 text-slate-400 text-xs font-semibold px-2.5 py-0.5 rounded">TailwindCSS</span>
+                        <span class="bg-slate-800 text-slate-400 text-xs font-semibold px-2.5 py-0.5 rounded">Responsive Split</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Sourdough & Shutter Portfolio</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        A highly customized personal portfolio layout designed specifically for a professional artisan baker who is also a lifestyle photographer. Features a dynamic split-screen landing interaction, fine typography treatments, and a blended media filter block.
+                    </p>
+                </div>
+                <div class="px-6 pb-6 pt-0">
+                    <button onclick="openBakeryModal()" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded transition shadow-sm">
+                        View Live Concept
+                    </button>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+            <!-- Project 2: Studio V&A — Architecture & Interior -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-zinc-950/60 text-zinc-400 border border-zinc-800 text-xs font-semibold px-2.5 py-0.5 rounded">Minimalist Luxe</span>
+                        <span class="bg-blue-950/40 text-blue-400 border border-blue-900/40 text-xs font-semibold px-2.5 py-0.5 rounded">Immersive Media</span>
+                        <span class="bg-slate-800 text-slate-400 text-xs font-semibold px-2.5 py-0.5 rounded">Dynamic Filter</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Studio V&A — Spatial Architecture</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        A high-end design concept for a boutique architectural and interior firm. Focuses heavily on oversized brutalist typography, asymmetrical image layouts, high-contrast typography hierarchies, and an interactive structural metric drawer.
+                    </p>
+                </div>
+                <div class="px-6 pb-6 pt-0">
+                    <button onclick="openArchModal()" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded transition shadow-sm">
+                        View Live Concept
+                    </button>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-            
-            <!-- AMENDED: Secure Mailto Email Address Link -->
-            <div class="email-direct">
-                <span>Or email directly at: </span>
-                <a href="mailto:sarwatmasror@gmail.com" class="email-link">sarwatmasror@gmail.com</a>
-            </div>
-        </form>
+        </div>
     </section>
 
-    <!-- Base Footer Section Layout -->
-    <footer>
-        <p>© 2026 Maryam Zahra — Web Designer & Developer</p>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-slate-950 border-t border-slate-900">
+        <div class="max-w-xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-white tracking-tight">Contact Me</h2>
+                <p class="text-slate-400 mt-2">Have a question or want to discuss a live client workflow project? Drop a message below!</p>
+            </div>
+
+            <form action="https://formspree.io/f/xknpndzz" method="POST" class="space-y-4 bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-xl">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Name</label>
+                    <input type="text" name="name" class="w-full border border-slate-800 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-950 text-white" placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Email</label>
+                    <input type="email" name="email" class="w-full border border-slate-800 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-950 text-white" placeholder="yourname@example.com" required>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Message</label>
+                    <textarea name="message" rows="5" class="w-full border border-slate-800 rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-950 text-white" placeholder="Tell me details about your website or design idea..." required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition shadow-sm text-sm uppercase tracking-wider">Send Message</button>
+            </form>
+
+            <div class="text-center mt-8 text-sm text-slate-400">
+                Or email directly at: <a href="mailto:sarwatmasror@gmail.com" class="text-blue-400 hover:underline font-medium">sarwatmasror@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-900 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Maryam Zahra — Web Designer & Developer. All rights reserved.</p>
     </footer>
+
+
+    <!-- ==========================================
+         LIVE POPUP MODAL: SOURDOUGH & SHUTTER 
+         ========================================== -->
+    <div id="bakeryModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-0 md:p-6">
+        <div class="bg-stone-50 w-full h-full md:max-w-6xl md:h-[90vh] md:rounded-2xl shadow-2xl overflow-y-auto relative modal-body flex flex-col text-stone-600">
+            
+            <!-- Close Banner -->
+            <div class="bg-stone-900 text-white px-6 py-3 flex justify-between items-center sticky top-0 z-50 shadow-md">
+                <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Live Demo Concept Overview</span>
+                <button onclick="closeBakeryModal()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition">
+                    ✕ Close Preview
+                </button>
+            </div>
+
+            <!-- EMBEDDED BAKERY CODE START -->
+            <div class="flex-1">
+                <nav class="bg-white/80 backdrop-blur-md border-b border-stone-200 w-full">
+                    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+                        <span class="font-serif text-xl tracking-wide font-bold text-stone-950">Sourdough & Shutter</span>
+                        <div class="space-x-4 text-xs font-medium tracking-wide uppercase text-stone-600">
+                            <a href="#concept-about" class="hover:text-amber-700 transition">About</a>
+                            <a href="#concept-gallery" class="hover:text-amber-700 transition">Gallery</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="min-h-[80vh] w-full flex flex-col md:flex-row">
+                    <div class="bg-bakery bg-cover bg-center flex-1 flex flex-col justify-center items-center text-center p-8 transition-all duration-500 hover:flex-[1.1] group min-h-[40vh] md:min-h-0">
+                        <span class="text-xs tracking-widest text-amber-200 uppercase mb-2">Artisan Baker</span>
+                        <h4 class="font-serif text-3xl md:text-5xl text-white font-bold mb-4">The Crumb & Crust</h4>
+                        <p class="text-stone-400 max-w-sm mb-6 text-xs md:text-sm">Wild yeast sourdough, laminated pastries, and morning magic baked daily.</p>
+                        <a href="#concept-gallery" class="bg-amber-700 hover:bg-amber-800 text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition">View Bakes</a>
+                    </div>
+                    <div class="bg-photo bg-cover bg-center flex-1 flex flex-col justify-center items-center text-center p-8 transition-all duration-500 hover:flex-[1.1] group min-h-[40vh] md:min-h-0">
+                        <span class="text-xs tracking-widest text-sky-200 uppercase mb-2">Visual Storyteller</span>
+                        <h4 class="font-serif text-3xl md:text-5xl text-white font-bold mb-4">Captured Moments</h4>
+                        <p class="text-stone-400 max-w-sm mb-6 text-xs md:text-sm">Editorial lifestyle, culinary portraiture, and natural light photography.</p>
+                        <a href="#concept-gallery" class="bg-white hover:bg-stone-100 text-stone-900 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition">View Portfolio</a>
+                    </div>
+                </div>
+
+                <div id="concept-about" class="py-16 px-6 max-w-3xl mx-auto text-center">
+                    <span class="text-xs tracking-widest text-amber-800 uppercase font-bold">The Creative Behind Both</span>
+                    <h5 class="font-serif text-2xl md:text-3xl font-bold mt-2 mb-4 text-stone-950">Hi, I'm Clara Vance</h5>
+                    <p class="text-stone-600 leading-relaxed text-sm md:text-base">
+                        By 4:00 AM, you can find me covered in flour, shaping naturally leavened loaves. By noon, the apron comes off and the camera comes out. I apply the same patience, attention to detail, and love for organic textures to both my baking and my photography.
+                    </p>
+                </div>
+
+                <div id="concept-gallery" class="py-12 bg-stone-100 px-6">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-8">
+                            <h5 class="font-serif text-2xl font-bold text-stone-950">Selected Work</h5>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="bg-white p-2 rounded shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&q=80&w=400" class="w-full h-48 object-cover rounded mb-2">
+                                <div class="flex justify-between items-center text-xs"><span class="font-medium text-stone-800">Country Sourdough</span><span class="text-amber-800 font-bold">BAKING</span></div>
+                            </div>
+                            <div class="bg-white p-2 rounded shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=400" class="w-full h-48 object-cover rounded mb-2">
+                                <div class="flex justify-between items-center text-xs"><span class="font-medium text-stone-800">Golden Hour Portrait</span><span class="text-sky-800 font-bold">PHOTO</span></div>
+                            </div>
+                            <div class="bg-white p-2 rounded shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=400" class="w-full h-48 object-cover rounded mb-2">
+                                <div class="flex justify-between items-center text-xs"><span class="font-medium text-stone-800">Flaky Croissants</span><span class="text-amber-800 font-bold">BAKING</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-12 px-6 max-w-md mx-auto">
+                    <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+                        <h5 class="font-serif text-xl font-bold text-stone-950 mb-4 text-center">Let's Work Together</h5>
+                        <input type="text" class="w-full border border-stone-300 rounded p-2 text-xs mb-3" placeholder="Your Name">
+                        <button type="button" onclick="alert('Demo Sent!')" class="w-full bg-stone-900 text-white py-2 rounded text-xs uppercase tracking-wider">Send Request</button>
+                    </div>
+                </div>
+            </div>
+            <!-- EMBEDDED BAKERY CODE END -->
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         LIVE POPUP MODAL: STUDIO V&A (ARCHITECTURE)
+         ========================================== -->
+    <div id="archModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-sm z-50 hidden flex items-center justify-center p-0 md:p-6">
+        <div class="bg-zinc-900 w-full h-full md:max-w-6xl md:h-[90vh] md:rounded-2xl shadow-2xl overflow-y-auto relative modal-body flex flex-col text-zinc-400 border border-zinc-800">
+            
+            <!-- Close Banner -->
+            <div class="bg-zinc-950 text-white px-6 py-3 flex justify-between items-center sticky top-0 z-50 border-b border-zinc-800">
+                <span class="text-xs font-mono tracking-widest text-zinc-400 uppercase">Interactive Architecture Concept</span>
+                <button onclick="closeArchModal()" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition border border-zinc-700">
+                    ✕ Close Demo
+                </button>
+            </div>
+
+            <!-- EMBEDDED ARCHITECTURE CODE START -->
+            <div class="flex-1 bg-zinc-900">
+                <!-- HERO SECTION -->
+                <div class="bg-arch-hero bg-cover bg-center min-h-[60vh] flex flex-col justify-end p-6 md:p-12 border-b border-zinc-800">
+                    <div class="max-w-3xl">
+                        <span class="text-xs tracking-widest text-blue-400 uppercase font-mono block mb-3">// ARCHITECTURE & INTERIORS</span>
+                        <h4 class="text-4xl md:text-6xl font-light tracking-tight text-white mb-4">
+                            Simplicity <span class="font-serif italic">Elevated</span>
+                        </h4>
+                        <p class="text-zinc-400 text-sm md:text-base max-w-xl leading-relaxed">
+                            Studio V&A designs minimalist residential spaces, structural monuments, and tactile commercial environments across South Asia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- METRIC SPECIFICATION EXPLORER (INTERACTIVE) -->
+                <div class="py-12 px-6 max-w-5xl mx-auto">
+                    <div class="bg-zinc-950 border border-zinc-800 rounded-xl p-6 md:p-8">
+                        <h5 class="text-sm font-mono tracking-wider text-zinc-400 mb-6 uppercase">// Project Dimension Configuration</h5>
+                        
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <label class="block text-xs font-mono text-zinc-400 uppercase mb-2">Select Project Style</label>
+                                <select id="archType" onchange="updateArchProject()" class="w-full bg-zinc-900 border border-zinc-800 rounded p-2.5 text-xs text-white focus:outline-none focus:border-blue-500">
+                                    <option value="minimalist">Minimalist Villa Framework</option>
+                                    <option value="brutalist">Brutalist Concrete Estate</option>
+                                    <option value="biophilic">Biophilic Urban Lounge</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-zinc-400 uppercase mb-2">Target Footprint (Sq. Ft.)</label>
+                                <input type="number" id="archArea" value="3500" oninput="updateArchProject()" class="w-full bg-zinc-900 border border-zinc-800 rounded p-2 text-xs text-white focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="bg-zinc-900 p-4 rounded border border-zinc-800 flex flex-col justify-center">
+                                <span class="text-2xs font-mono text-zinc-500 uppercase">Estimated Timeline</span>
+                                <span id="archTimeline" class="text-xl font-bold text-blue-400 mt-1">10-12 Months</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Output Block -->
+                        <div class="mt-6 p-4 bg-zinc-900/50 border border-dashed border-zinc-800 rounded">
+                            <span class="text-2xs font-mono text-zinc-500 uppercase block mb-1">Concept Materials & Focus</span>
+                            <p id="archDetails" class="text-xs text-zinc-400 leading-relaxed">
+                                Premium raw limestone finishes paired with monolithic structural glazing modules. Maximizes shadow movement layouts throughout peak sunset angles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MINI GALLERY GRID -->
+                <div class="pb-16 px-6 max-w-5xl mx-auto">
+                    <h5 class="text-sm font-mono tracking-wider text-zinc-400 mb-6 uppercase">// Structural Archive</h5>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class="group relative overflow-hidden rounded-lg bg-zinc-950 border border-zinc-800 p-3">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=400" class="w-full h-48 object-cover rounded mb-3 grayscale group-hover:grayscale-0 transition-all duration-300">
+                            <span class="text-2xs font-mono text-blue-400 block">RESIDENTIAL</span>
+                            <span class="text-sm font-medium text-white block mt-0.5">The Obsidian Pavilion</span>
+                        </div>
+                        <div class="group relative overflow-hidden rounded-lg bg-zinc-950 border border-zinc-800 p-3">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=400" class="w-full h-48 object-cover rounded mb-3 grayscale group-hover:grayscale-0 transition-all duration-300">
+                            <span class="text-2xs font-mono text-blue-400 block">INTERIOR DESIGN</span>
+                            <span class="text-sm font-medium text-white block mt-0.5">Muted Travertine Lounge</span>
+                        </div>
+                        <div class="group relative overflow-hidden rounded-lg bg-zinc-950 border border-zinc-800 p-3">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=400" class="w-full h-48 object-cover rounded mb-3 grayscale group-hover:grayscale-0 transition-all duration-300">
+                            <span class="text-2xs font-mono text-blue-400 block">COMMERCIAL</span>
+                            <span class="text-sm font-medium text-white block mt-0.5">Linear Concrete Studio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- EMBEDDED ARCHITECTURE CODE END -->
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT CONTROLS FOR RESPONSIVE SITE MODALS -->
+    <script>
+        // Sourdough Bakery Modal Controls
+        function openBakeryModal() {
+            document.getElementById('bakeryModal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+        function closeBakeryModal() {
+            document.getElementById('bakeryModal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Architecture Modal Controls
+        function openArchModal() {
+            document.getElementById('archModal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+        function closeArchModal() {
+            document.getElementById('archModal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Dynamic Configuration Simulator for Architecture Demo
+        function updateArchProject() {
+            var type = document.getElementById('archType').value;
+            var area = parseInt(document.getElementById('archArea').value) || 2000;
+            
+            var timelineBox = document.getElementById('archTimeline');
+            var detailsBox = document.getElementById('archDetails');
+            
+            var BaseMonths = area < 3000 ? 8 : (area < 6000 ? 12 : 18);
+            
+            if (type === 'minimalist') {
+                timelineBox.innerText = BaseMonths + '-' + (BaseMonths + 2) + ' Months';
+                detailsBox.innerText = 'Premium raw limestone finishes paired with monolithic structural glazing modules. Maximizes natural lighting paths across ' + area.toLocaleString() + ' square feet.';
+            } else if (type === 'brutalist') {
+                timelineBox.innerText = (BaseMonths + 3) + '-' + (BaseMonths + 5) + ' Months';
+                detailsBox.innerText = 'Exposed architectural concrete castings layered with heavy cedar elements. Designed with deep cantilevers for an advanced structural ' + area.toLocaleString() + ' sq. ft. build.';
+            } else if (type === 'biophilic') {
+                timelineBox.innerText = (BaseMonths + 1) + '-' + (BaseMonths + 3) + ' Months';
+                detailsBox.innerText = 'Integrated courtyard micro-climates, interior live-greenery wells, and sustainable automated water retention frames for a premium open-air layout.';
+            }
+        }
+    </script>
 
 </body>
 </html>
